@@ -13,12 +13,12 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'pulseposting@gmail.com';                 // Наш логин
-$mail->Password = 'Kiwikawi7878';                           // Наш пароль от ящика
+$mail->Username = 'pulseposting@gmail.com';                 // Login
+$mail->Password = 'Kiwikawi7878';                           // Email password
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                    // TCP port to connect to
  
-$mail->setFrom('pulseposting@gmail.com', 'Pulse');   // От кого письмо 
+$mail->setFrom('pulseposting@gmail.com', 'Pulse');   // email sender
 $mail->addAddress('postingpulse@gmail.com');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
@@ -28,11 +28,11 @@ $mail->addAddress('postingpulse@gmail.com');     // Add a recipient
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Данные';
+$mail->Subject = 'Data';
 $mail->Body    = '
-		Пользователь оставил данные <br> 
-	Имя: ' . $name . ' <br>
-	Номер телефона: ' . $phone . '<br>
+		User leave message <br> 
+	Name: ' . $name . ' <br>
+	Phone number: ' . $phone . '<br>
 	E-mail: ' . $email . '';
 
 if(!$mail->send()) {
